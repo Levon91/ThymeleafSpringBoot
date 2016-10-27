@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragment/menu::menu">
+
+</head>
+<body>
+<div class="wrapper">
+    <form th:action="@{/login}" method="POST" class="form-signin">
+        <!--<span class="form-signin-heading" th:if="${#fields.hasErrors('username')}" th:text="#{error.username}"></span>-->
+        <input th:type="text" th:value="username" class="form-control"/><br/>
+        <!--<span class="form-signin-heading" th:if="${#fields.hasErrors('password')}" th:text="#{error.password}"></span>-->
+        <input th:type="password" th:value="password" class="form-control"/><br/>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="'Log In'"></button>
+        <br/>
+    </form>
+    <a th:href="@{/registration}" th:text="#{createAccount}"></a>
+</div>
+</body>
+</html>
